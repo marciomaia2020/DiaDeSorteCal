@@ -1,0 +1,122 @@
+/* Geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F9FBE7; /* Tom claro de verde/amarelo */
+    margin: 0;
+    padding: 20px;
+    color: #4E342E; /* Marrom escuro para contraste */
+}
+
+h1 {
+    text-align: center;
+    color: #2E7D32; /* Verde escuro */
+    font-size: 2em;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #388E3C; /* Verde médio */
+}
+
+input, select {
+    margin-top: 5px;
+    font-size: 1em;
+    padding: 5px;
+    border: 2px solid #8BC34A; /* Verde limão */
+    border-radius: 5px;
+    width: 100%;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+ /*
+button {
+   background-color: #FFA000;  Amarelo escuro 
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 20px 100px;
+    border-radius: 8px;
+}*/
+
+button{
+    padding: 10px;
+    font-size: 16px;
+    color: #8BC34A;
+    margin-right: 10px; /* Espaço entre os botões */
+}
+
+button:hover {
+    background-color: #F57C00; /* Amarelo mais escuro no hover */
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+/* Resultados e Informações */
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #DCEDC8; /* Verde claro */
+    border: 1px solid #C5E1A5;
+    border-radius: 5px;
+    color: #1B5E20; /* Verde mais escuro */
+}
+
+.info p, .info ul {
+    margin: 10px 0;
+    color: #4E342E;
+}
+
+.info a {
+    color: #1B5E20;
+    text-decoration: underline;
+}
+
+/* Tabela */
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #81C784; /* Verde pastel */
+    color: white;
+}
+
+th, td {
+    border: 1px solid #A5D6A7; /* Verde suave */
+    padding: 8px;
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #F1F8E9; /* Verde claro alternado */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #E8F5E9; /* Mais claro */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    input, select, button {
+        width: 100%;
+    }
+}
