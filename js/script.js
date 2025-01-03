@@ -9,7 +9,24 @@ function calcularCusto() {
         return;
     }
 
-    const custoTotal = valorAposta * quantidadeJogos;
+    // Tabela de Preços
+    const tabelaPrecos = {
+        7: 2.50,
+        8: 20.00,
+        9: 90.00,
+        10: 300.00,
+        11: 825.00,
+        12: 1980.00,
+        13: 4290.00,
+        14: 8580.00,
+        15: 16087.50
+    };
+
+    // Obtém o valor da aposta baseado na quantidade de números
+    const valorPorJogo = tabelaPrecos[dezenas];
+
+    // Calcula o custo total
+    const custoTotal = valorPorJogo * quantidadeJogos;
     const custoPorCota = custoTotal / cotas;
 
     document.getElementById('resultado').innerHTML = `
@@ -20,14 +37,17 @@ function calcularCusto() {
 
 function calcularTeimosinha() {
     const concursos = parseInt(document.getElementById('concursosConsecutivos').value);
-    const custoTeimosinha = parseFloat(document.getElementById('valorAposta').value) * concursos;
+    const valorAposta = parseFloat(document.getElementById('valorAposta').value);
+    const custoTeimosinha = valorAposta * concursos;
 
     document.getElementById('resultado').innerHTML = `
         <p><b>Custo para ${concursos} concursos consecutivos:</b> R$ ${custoTeimosinha.toFixed(2)}</p>
     `;
 }
-document.getElementById("numDezenas").addEventListener("change", function () {
-    const valoresAposta = {
+
+// Atualiza o valor da aposta com base na quantidade de números escolhidos
+document.getElementById("dezenas").addEventListener("change", function () {
+    const tabelaPrecos = {
         7: "R$ 2,50",
         8: "R$ 20,00",
         9: "R$ 90,00",
@@ -40,5 +60,5 @@ document.getElementById("numDezenas").addEventListener("change", function () {
     };
 
     const quantidadeNumeros = this.value;
-    document.getElementById("valorAposta").textContent = valoresAposta[quantidadeNumeros];
+    document.getElementById("valorAposta").value = tabelaPrecos[quantidadeNumeros].replace("R$ ", "").replace(",", ".");
 });
